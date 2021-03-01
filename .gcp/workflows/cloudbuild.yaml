@@ -1,0 +1,10 @@
+
+steps:
+  - name: 'gcr.io/$PROJECT_ID/helm'
+    args: ['install', 'strimzi/strimzi-kafka-operator', '--name', 'strimzi-operator']
+    env:
+      - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=gcp-gke-helm-poc'
+      - 'HELM_REPO_NAME=strimzi'
+      - 'HELM_REPO_URL=https://strimzi.io/charts/'
+tags: ['cloud-builders-community']
